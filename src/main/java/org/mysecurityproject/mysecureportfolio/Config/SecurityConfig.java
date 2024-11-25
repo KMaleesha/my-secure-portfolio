@@ -24,13 +24,11 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig {
 
-
     @Autowired
     private UserDetailsService userDetailsService;
 
     @Autowired
     private JwtFilter jwtFilter;
-
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -60,14 +58,4 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
 
     }
-
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        UserDetails userDetails = User.withDefaultPasswordEncoder()
-//                .username()
-//                .password()
-//                .roles()
-//                .build();
-//        return new InMemoryUserDetailsManager();
-//    }
 }
